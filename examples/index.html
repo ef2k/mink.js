@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mink.js - A Minimalistic DOM Library for Mobile WebKit</title>
+</head>
+<body>
+
+  <h1>Mink.js</h1>
+  <p id="intro" class='lead'>A Minimalistic DOM Library for Mobile Webkit.</p>
+
+  <h2>Selectors</h2>
+  <p>Mink wraps <code>querySelectorAll</code> and falls back to <code>getElementById</code> &amp; <code>getElementsByClassName</code> when needed. Syntax is similar to jQuery.</p>
+
+  <pre>
+    var foo = mink('#foo');
+    var intro = mink('div > p.intro');
+  </pre>
+
+
+  <h2>Methods</h2>
+
+  <ul>
+    <li>on</li>
+    <li>off</li>
+    <li>hide</li>
+    <li>show</li>
+    <li>append</li>
+    <li>remove</li>
+    <li>addClass</li>
+    <li>removeClass</li>
+  </ul>
+
+  <h2>Events</h2>
+
+  <p>Registering to events are done by wrapping <code>addEventListener</code>, so
+    all native DOM events are supported.</p>
+
+  <pre>
+    mink('#foo').on('touchstart', function () {
+      var foo = mink(this);
+      foo.hide(); // will hide the element.
+    });
+  </pre>
+
+  <h3>Touch Events</h3>
+  <p>Although <code>touchstart</code>, <code>touchmove</code>, and <code>touchend</code>
+    are supported. It's probably best to use a library like Hammer.js which has abstracts gesture support.</p>
+
+
+
+  <script src='../lib/hammer.js'></script>
+  <script src='../mink.js'></script>
+  <script src='app.js'></script>
+</body>
+</html>
